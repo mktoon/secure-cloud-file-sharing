@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------------------
 
-# 📦 Secure Cloud File Sharing Infrastructure (Terraform)
+# Secure Cloud File Sharing Infrastructure (Terraform)
 This project automates the provisioning of a **secure, serverless file sharing backend on AWS**, leveraging **Terraform modules** to manage S3, Lambda, API Gateway, and Cognito. 
 All core infrastructure components are modular, reusable, and follow best practices for: 
 - security.

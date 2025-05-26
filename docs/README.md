@@ -1,12 +1,11 @@
 ----------------------------------------------------------------------------------
 
 # 📦 Secure Cloud File Sharing Infrastructure (Terraform)
-
 This project automates the provisioning of a **secure, serverless file sharing backend on AWS**, leveraging **Terraform modules** to manage S3, Lambda, API Gateway, and Cognito. 
 All core infrastructure components are modular, reusable, and follow best practices for: 
-    1. security.
-    2. scalability.
-    3. compliance.
+- security.
+- scalability.
+- compliance.
 
 ----------------------------------------------------------------------------------
 
@@ -35,15 +34,15 @@ This infrastructure deploys:
 
 ## Modules
 
-### ✅ S3 Module
+### S3 Module
 
 **Purpose:** Provision a secure S3 bucket to store user files.
 
 **Security & Features:**
-- ✅ Server-side encryption using AES256.
-- ✅ Bucket versioning enabled.
-- ✅ Block all public access.
-- ✅ Outputs the bucket name for integration.
+    - Server-side encryption using AES256.
+    - Bucket versioning enabled.
+    - Block all public access.
+    - Outputs the bucket name for integration.
 
 **Benefits:**
 - **Encryption**: Ensures data at rest is protected for compliance.
@@ -53,7 +52,7 @@ This infrastructure deploys:
 
 ----------------------------------------------------------------------------------
 
-### ✅ Lambda Module
+### Lambda Module
 
 **Purpose:** Provision serverless functions that handle file upload and download.
 
@@ -71,7 +70,7 @@ This infrastructure deploys:
 
 ----------------------------------------------------------------------------------
 
-### ✅ API Gateway Module
+### API Gateway Module
 
 **Purpose:** Expose secure HTTPS endpoints for file operations via API Gateway.
 
@@ -106,14 +105,13 @@ This infrastructure deploys:
 ----------------------------------------------------------------------------------
 
 ## 🚀 Deployment Instructions
+Prerequisites: [Terraform](https://developer.hashicorp.com/terraform/downloads), AWS CLI, and an active AWS account.
 
-> Prerequisites: [Terraform](https://developer.hashicorp.com/terraform/downloads), AWS CLI, and an active AWS account.
-
-# Initialize Terraform modules
+**Initialize Terraform modules**
 terraform init
-# Preview infrastructure plan
+**Preview infrastructure plan**
 terraform plan
-# Deploy the infrastructure
+**Deploy the infrastructure**
 terraform apply
 
 
@@ -126,14 +124,12 @@ After successful deployment, key outputs will be displayed including:
 ----------------------------------------------------------------------------------
 
 ## Sample API Usage
-
-> These endpoints require authentication with a valid Cognito ID token.
+These endpoints require authentication with a valid Cognito ID token.
 ### Upload a file (POST)
 curl -X POST https://<api_id>.execute-api.<region>.amazonaws.com/prod/upload \
   -H "Content-Type: application/json" \
   -H "Authorization: <Cognito_ID_Token>" \
   -d '{"file_name": "test.txt", "content": "SGVsbG8gd29ybGQ="}'
-
 
 ### Download a file (GET)
 curl "https://<api_id>.execute-api.<region>.amazonaws.com/prod/download?file_name=test.txt" \

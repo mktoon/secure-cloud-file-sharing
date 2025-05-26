@@ -2,7 +2,7 @@
 # declares all input variables that can be reused across modules
 # variables provides flexibility and prevents hardcoding values
 
-variables "aws_region" {
+variable "region" {
     description = "AWS region to deploy resources in"
     type        = string
     default     = "us-west-2"
@@ -12,5 +12,5 @@ variables "aws_region" {
 variable "project_name" {
     description     = "A short name to prefix all the resource names"
     type            = string
-    default         = securecloud
+    # default         = securecloud
 }
